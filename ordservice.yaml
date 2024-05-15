@@ -1,0 +1,322 @@
+
+name: hlf-network
+version: 1.0.0
+client:
+  organization: "<no value>"
+organizations:
+  
+  OrdererMSP:
+    mspid: OrdererMSP
+    cryptoPath: /tmp/cryptopath
+    users: {}
+    peers: []
+    orderers:
+      - ord-node2.default
+      - ord-node3.default
+orderers:
+  ord-node2.default:
+
+    url: grpcs://ord-node2.workshop.adityajoshi.online:443
+
+    grpcOptions:
+      allow-insecure: false
+    tlsCACerts:
+      pem: |
+        
+  ord-node3.default:
+
+    url: grpcs://ord-node3.workshop.adityajoshi.online:443
+
+    grpcOptions:
+      allow-insecure: false
+    tlsCACerts:
+      pem: |
+        
+peers: {}
+certificateAuthorities:
+  
+  ord-ca.default:
+
+    url: https://ord-ca.workshop.adityajoshi.online:443
+
+
+    registrar:
+        enrollId: enroll
+        enrollSecret: "enrollpw"
+
+    caName: ca
+    tlsCACerts:
+      pem: 
+       - |
+            -----BEGIN CERTIFICATE-----
+            MIICbjCCAhWgAwIBAgIQZiDhsepxkV/7qSZLlU8U3jAKBggqhkjOPQQDAjBSMRMw
+            EQYDVQQGEwpDYWxpZm9ybmlhMQkwBwYDVQQHEwAxCTAHBgNVBAkTADEUMBIGA1UE
+            ChMLSHlwZXJsZWRnZXIxDzANBgNVBAsTBkZhYnJpYzAeFw0yNDA1MTQxODUwMzVa
+            Fw0zNDA1MTUxODUwMzVaMFIxEzARBgNVBAYTCkNhbGlmb3JuaWExCTAHBgNVBAcT
+            ADEJMAcGA1UECRMAMRQwEgYDVQQKEwtIeXBlcmxlZGdlcjEPMA0GA1UECxMGRmFi
+            cmljMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEAdbVssnWiowGtxRTBNFwZ136
+            MHjWsulwPM6pxtW9P5f7+nWMKc7/4tFKuYczBWdFN5y45MzYeiqTCHjBM/NNraOB
+            zDCByTAOBgNVHQ8BAf8EBAMCAaYwHQYDVR0lBBYwFAYIKwYBBQUHAwIGCCsGAQUF
+            BwMBMA8GA1UdEwEB/wQFMAMBAf8wKQYDVR0OBCIEIGdToEqy1Kzh+Ft5+osxHWjO
+            j7vbuYxvHckhdSnOonx2MFwGA1UdEQRVMFOCCWxvY2FsaG9zdIIGb3JkLWNhgg5v
+            cmQtY2EuZGVmYXVsdIIib3JkLWNhLndvcmtzaG9wLmFkaXR5YWpvc2hpLm9ubGlu
+            ZYcEfwAAAYcEj276cjAKBggqhkjOPQQDAgNHADBEAiAJTtPvaJp50h0JiPYAfaaL
+            WvWzqhI61MYa5s9OQdinjQIgFYLwefFuWXf668WDQBT9uUFVsvDlEvGIUarpXur4
+            ZP0=
+            -----END CERTIFICATE-----
+            
+  
+  ord-caa.default:
+
+    url: https://ord-ca.workshop.adityajoshi.online:443
+
+
+    registrar:
+        enrollId: enroll
+        enrollSecret: "enrollpw"
+
+    caName: ca
+    tlsCACerts:
+      pem: 
+       - |
+            -----BEGIN CERTIFICATE-----
+            MIICcTCCAhigAwIBAgIRAJUbYe192y9BS/F6cb+zW14wCgYIKoZIzj0EAwIwUjET
+            MBEGA1UEBhMKQ2FsaWZvcm5pYTEJMAcGA1UEBxMAMQkwBwYDVQQJEwAxFDASBgNV
+            BAoTC0h5cGVybGVkZ2VyMQ8wDQYDVQQLEwZGYWJyaWMwHhcNMjQwNTE0MTg1NDEx
+            WhcNMzQwNTE1MTg1NDExWjBSMRMwEQYDVQQGEwpDYWxpZm9ybmlhMQkwBwYDVQQH
+            EwAxCTAHBgNVBAkTADEUMBIGA1UEChMLSHlwZXJsZWRnZXIxDzANBgNVBAsTBkZh
+            YnJpYzBZMBMGByqGSM49AgEGCCqGSM49AwEHA0IABDeWJmKSQDOyoCWzTFzUVCvD
+            RM6Vdm17ws4EtIqFTLt1d4wT12NHv4DmEvsUQXO0ROkubwM7wsZZSmTFC3k7KPOj
+            gc4wgcswDgYDVR0PAQH/BAQDAgGmMB0GA1UdJQQWMBQGCCsGAQUFBwMCBggrBgEF
+            BQcDATAPBgNVHRMBAf8EBTADAQH/MCkGA1UdDgQiBCDoOC1UnUUGsPdWeoDBK2qo
+            xuH6VEU/vAWMvOHKGhIgfTBeBgNVHREEVzBVgglsb2NhbGhvc3SCB29yZC1jYWGC
+            D29yZC1jYWEuZGVmYXVsdIIib3JkLWNhLndvcmtzaG9wLmFkaXR5YWpvc2hpLm9u
+            bGluZYcEfwAAAYcEj276cjAKBggqhkjOPQQDAgNHADBEAiB9XdqXvNpTGh80c7j6
+            AEfCm19fjU2NIImOYwW7OMQ4HQIgFgIwgd5QF//OU1hnzjuqcqzoTOinZ5hNLWTo
+            5xB6bXw=
+            -----END CERTIFICATE-----
+            
+  
+  org1-ca.default:
+
+    url: https://org1-ca.workshop.adityajoshi.online:443
+
+
+    registrar:
+        enrollId: enroll
+        enrollSecret: "enrollpw"
+
+    caName: ca
+    tlsCACerts:
+      pem: 
+       - |
+            -----BEGIN CERTIFICATE-----
+            MIICczCCAhmgAwIBAgIRAPKyVITozYZcPl4B9ZqZwgkwCgYIKoZIzj0EAwIwUjET
+            MBEGA1UEBhMKQ2FsaWZvcm5pYTEJMAcGA1UEBxMAMQkwBwYDVQQJEwAxFDASBgNV
+            BAoTC0h5cGVybGVkZ2VyMQ8wDQYDVQQLEwZGYWJyaWMwHhcNMjQwNTE0MTg0OTM5
+            WhcNMzQwNTE1MTg0OTM5WjBSMRMwEQYDVQQGEwpDYWxpZm9ybmlhMQkwBwYDVQQH
+            EwAxCTAHBgNVBAkTADEUMBIGA1UEChMLSHlwZXJsZWRnZXIxDzANBgNVBAsTBkZh
+            YnJpYzBZMBMGByqGSM49AgEGCCqGSM49AwEHA0IABCofWxAI/NnQk2W9l7y3Snr6
+            jKxYSdL/NINs+sHuIFuFtCA0T2qCi63oKtj1aJCgQWr5DKyEbnMZX1E7nYHmnxCj
+            gc8wgcwwDgYDVR0PAQH/BAQDAgGmMB0GA1UdJQQWMBQGCCsGAQUFBwMCBggrBgEF
+            BQcDATAPBgNVHRMBAf8EBTADAQH/MCkGA1UdDgQiBCDYUeqaMjuohzOIWkP3FLy/
+            3oXC650Td5tADT6fQdRwXDBfBgNVHREEWDBWgglsb2NhbGhvc3SCB29yZzEtY2GC
+            D29yZzEtY2EuZGVmYXVsdIIjb3JnMS1jYS53b3Jrc2hvcC5hZGl0eWFqb3NoaS5v
+            bmxpbmWHBH8AAAGHBI9u+nIwCgYIKoZIzj0EAwIDSAAwRQIhAIxI/hSFpzod1Hov
+            mc3pfOsu0HuLQGP+fWD4XTxmUFqBAiBFJMAsofw7nFPD3dniMGc7cLnUYGPAKBXc
+            xvgRre9T3g==
+            -----END CERTIFICATE-----
+            
+  
+  org1-caa.default:
+
+    url: https://org1-ca.workshop.adityajoshi.online:443
+
+
+    registrar:
+        enrollId: enroll
+        enrollSecret: "enrollpw"
+
+    caName: ca
+    tlsCACerts:
+      pem: 
+       - |
+            -----BEGIN CERTIFICATE-----
+            MIICczCCAhqgAwIBAgIQOcGhg2fqRZFKGKqVZETCuTAKBggqhkjOPQQDAjBSMRMw
+            EQYDVQQGEwpDYWxpZm9ybmlhMQkwBwYDVQQHEwAxCTAHBgNVBAkTADEUMBIGA1UE
+            ChMLSHlwZXJsZWRnZXIxDzANBgNVBAsTBkZhYnJpYzAeFw0yNDA1MTQxODUzNDJa
+            Fw0zNDA1MTUxODUzNDJaMFIxEzARBgNVBAYTCkNhbGlmb3JuaWExCTAHBgNVBAcT
+            ADEJMAcGA1UECRMAMRQwEgYDVQQKEwtIeXBlcmxlZGdlcjEPMA0GA1UECxMGRmFi
+            cmljMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEh0bGG3pbx6M+zdAL4gPnDXtI
+            AHmAWgq0yU+icKyLyktTV1AahDPq3IM2pd8PHNyElJQbIxeqVpkaDb4/8hxVmaOB
+            0TCBzjAOBgNVHQ8BAf8EBAMCAaYwHQYDVR0lBBYwFAYIKwYBBQUHAwIGCCsGAQUF
+            BwMBMA8GA1UdEwEB/wQFMAMBAf8wKQYDVR0OBCIEIHOMt/Vy+quM+sBzlVudBVNo
+            hglgjdXZWxAAll9ZVPIGMGEGA1UdEQRaMFiCCWxvY2FsaG9zdIIIb3JnMS1jYWGC
+            EG9yZzEtY2FhLmRlZmF1bHSCI29yZzEtY2Eud29ya3Nob3AuYWRpdHlham9zaGku
+            b25saW5lhwR/AAABhwSPbvpyMAoGCCqGSM49BAMCA0cAMEQCIBeBmBLzPdCb+yv2
+            FHQGlTKn/GlAHNDQBYmSuVO+AVtKAiBzGvpLD8Sc6bCmh5RGLkTnPs84lkJJOusr
+            4wnbl8ZMjg==
+            -----END CERTIFICATE-----
+            
+  
+  org1-caaa.default:
+
+    url: https://org1-ca.localho.st:443
+
+
+    registrar:
+        enrollId: enroll
+        enrollSecret: "enrollpw"
+
+    caName: ca
+    tlsCACerts:
+      pem: 
+       - |
+            -----BEGIN CERTIFICATE-----
+            MIICZTCCAgygAwIBAgIRAPprEuQOYBAobTjNIvyKi+UwCgYIKoZIzj0EAwIwUjET
+            MBEGA1UEBhMKQ2FsaWZvcm5pYTEJMAcGA1UEBxMAMQkwBwYDVQQJEwAxFDASBgNV
+            BAoTC0h5cGVybGVkZ2VyMQ8wDQYDVQQLEwZGYWJyaWMwHhcNMjQwNTE0MTkwMDA2
+            WhcNMzQwNTE1MTkwMDA2WjBSMRMwEQYDVQQGEwpDYWxpZm9ybmlhMQkwBwYDVQQH
+            EwAxCTAHBgNVBAkTADEUMBIGA1UEChMLSHlwZXJsZWRnZXIxDzANBgNVBAsTBkZh
+            YnJpYzBZMBMGByqGSM49AgEGCCqGSM49AwEHA0IABEnPsrz+7hxGE7Kzcdu+yzof
+            zzBP6X5IrVwApYIoAb+eVp/XvWcf53V1bVxzAkQVyqfuyeAxCTyGf06loXiuWbGj
+            gcIwgb8wDgYDVR0PAQH/BAQDAgGmMB0GA1UdJQQWMBQGCCsGAQUFBwMCBggrBgEF
+            BQcDATAPBgNVHRMBAf8EBTADAQH/MCkGA1UdDgQiBCB50gn/8XVqWcWrUO4Z4fbJ
+            Nz6LMZkg+lD/l8Nm7rsesDBSBgNVHREESzBJgglsb2NhbGhvc3SCCW9yZzEtY2Fh
+            YYIRb3JnMS1jYWFhLmRlZmF1bHSCEm9yZzEtY2EubG9jYWxoby5zdIcEfwAAAYcE
+            j276cjAKBggqhkjOPQQDAgNHADBEAiB7NJWwsdYrgLohGs0XhOK6Rn04UQZa7xOr
+            S4rj/IrA4gIgf/nhUzFGO3lBrumYTRZzr+gWlgq6qAaP7JIiZpzct7A=
+            -----END CERTIFICATE-----
+            
+  
+  org1-caaaa.default:
+
+    url: https://org1-ca.143.110.250.114:443
+
+
+    registrar:
+        enrollId: enroll
+        enrollSecret: "enrollpw"
+
+    caName: ca
+    tlsCACerts:
+      pem: 
+       - |
+            -----BEGIN CERTIFICATE-----
+            MIICbTCCAhOgAwIBAgIRAM8ANuJSrmDiOgX9+n/8EA8wCgYIKoZIzj0EAwIwUjET
+            MBEGA1UEBhMKQ2FsaWZvcm5pYTEJMAcGA1UEBxMAMQkwBwYDVQQJEwAxFDASBgNV
+            BAoTC0h5cGVybGVkZ2VyMQ8wDQYDVQQLEwZGYWJyaWMwHhcNMjQwNTE0MTkwMjM3
+            WhcNMzQwNTE1MTkwMjM3WjBSMRMwEQYDVQQGEwpDYWxpZm9ybmlhMQkwBwYDVQQH
+            EwAxCTAHBgNVBAkTADEUMBIGA1UEChMLSHlwZXJsZWRnZXIxDzANBgNVBAsTBkZh
+            YnJpYzBZMBMGByqGSM49AgEGCCqGSM49AwEHA0IABOrviq0YuYHuOBKiAYlj+MTh
+            Af5uOiTGDYf8S1HqTj4h+CiYtY8sjNH8Wa/dy561hort2QOq4GLZdUvdzP2CMtmj
+            gckwgcYwDgYDVR0PAQH/BAQDAgGmMB0GA1UdJQQWMBQGCCsGAQUFBwMCBggrBgEF
+            BQcDATAPBgNVHRMBAf8EBTADAQH/MCkGA1UdDgQiBCCnn/7HhsOvuu5JcaKXsnsN
+            ZXWVC4+hTlcPsct6oNErezBZBgNVHREEUjBQgglsb2NhbGhvc3SCCm9yZzEtY2Fh
+            YWGCEm9yZzEtY2FhYWEuZGVmYXVsdIIXb3JnMS1jYS4xNDMuMTEwLjI1MC4xMTSH
+            BH8AAAGHBI9u+nIwCgYIKoZIzj0EAwIDSAAwRQIgF032m18Qu/BVSild6bA7qm62
+            8fmZ38QYXkQxAogjlIgCIQCr1E5/EHCbbDAm2nzYyTLzjSGa+GAA6ZBw86dRKIP9
+            Bg==
+            -----END CERTIFICATE-----
+            
+  
+  org1-caaaaa.default:
+
+    url: https://org1-ca.pool-kflwvq74o-j0zvf:443
+
+
+    registrar:
+        enrollId: enroll
+        enrollSecret: "enrollpw"
+
+    caName: ca
+    tlsCACerts:
+      pem: 
+       - |
+            -----BEGIN CERTIFICATE-----
+            MIICczCCAhmgAwIBAgIQA+YNDWYYuXx5I40AHIWnATAKBggqhkjOPQQDAjBSMRMw
+            EQYDVQQGEwpDYWxpZm9ybmlhMQkwBwYDVQQHEwAxCTAHBgNVBAkTADEUMBIGA1UE
+            ChMLSHlwZXJsZWRnZXIxDzANBgNVBAsTBkZhYnJpYzAeFw0yNDA1MTQxOTA0MDBa
+            Fw0zNDA1MTUxOTA0MDBaMFIxEzARBgNVBAYTCkNhbGlmb3JuaWExCTAHBgNVBAcT
+            ADEJMAcGA1UECRMAMRQwEgYDVQQKEwtIeXBlcmxlZGdlcjEPMA0GA1UECxMGRmFi
+            cmljMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEelPaViCA0hyvq9fpcM5UpUFk
+            TIjcGAAJGOHHmmLkudpaImVWHUXwfyFwOBCAU58in23daggGFuon/1Cqv6P38aOB
+            0DCBzTAOBgNVHQ8BAf8EBAMCAaYwHQYDVR0lBBYwFAYIKwYBBQUHAwIGCCsGAQUF
+            BwMBMA8GA1UdEwEB/wQFMAMBAf8wKQYDVR0OBCIEIABHgZLGJIauJrND+QlsGMC9
+            F3r9O1h7TOn27Na8ceRTMGAGA1UdEQRZMFeCCWxvY2FsaG9zdIILb3JnMS1jYWFh
+            YWGCE29yZzEtY2FhYWFhLmRlZmF1bHSCHG9yZzEtY2EucG9vbC1rZmx3dnE3NG8t
+            ajB6dmaHBH8AAAGHBI9u+nIwCgYIKoZIzj0EAwIDSAAwRQIhAPZvV2b0c003Roar
+            CGutCRoW1HFWmogFyFlC18XsbSaZAiATAgYKvTXHL6eTr/1KL+BvmLiI3QNLMT2/
+            eTSQVsv9kg==
+            -----END CERTIFICATE-----
+            
+  
+  org2-ca.default:
+
+    url: https://org2-ca.workshop.adityajoshi.online:443
+
+
+    registrar:
+        enrollId: enroll
+        enrollSecret: "enrollpw"
+
+    caName: ca
+    tlsCACerts:
+      pem: 
+       - |
+            -----BEGIN CERTIFICATE-----
+            MIICcTCCAhigAwIBAgIQPNwOHzxStR56alP2ltBKZDAKBggqhkjOPQQDAjBSMRMw
+            EQYDVQQGEwpDYWxpZm9ybmlhMQkwBwYDVQQHEwAxCTAHBgNVBAkTADEUMBIGA1UE
+            ChMLSHlwZXJsZWRnZXIxDzANBgNVBAsTBkZhYnJpYzAeFw0yNDA1MTQxODUwMDVa
+            Fw0zNDA1MTUxODUwMDVaMFIxEzARBgNVBAYTCkNhbGlmb3JuaWExCTAHBgNVBAcT
+            ADEJMAcGA1UECRMAMRQwEgYDVQQKEwtIeXBlcmxlZGdlcjEPMA0GA1UECxMGRmFi
+            cmljMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEr9T4hcf6JM/XzZZRDGFmtzNC
+            che+4kGGF2K+bUq2NrB4Hh1zboziPJZHYWLgqNLZB2SCwNm1hL9pWnDdPSiU2aOB
+            zzCBzDAOBgNVHQ8BAf8EBAMCAaYwHQYDVR0lBBYwFAYIKwYBBQUHAwIGCCsGAQUF
+            BwMBMA8GA1UdEwEB/wQFMAMBAf8wKQYDVR0OBCIEIDfrciZ7KIZd7gLRaLVBEEDc
+            fbSTliCAVGrkkqcp8LPbMF8GA1UdEQRYMFaCCWxvY2FsaG9zdIIHb3JnMi1jYYIP
+            b3JnMi1jYS5kZWZhdWx0giNvcmcyLWNhLndvcmtzaG9wLmFkaXR5YWpvc2hpLm9u
+            bGluZYcEfwAAAYcEj276cjAKBggqhkjOPQQDAgNHADBEAiAdMxSYNYmq3jQe/DJ8
+            rQFpAP/yhf9hcrUZFEciL/ZPLwIgEHO6h+/LdgBlM8lHPZDURLoA9LJr1UH34UDK
+            RGBn8EA=
+            -----END CERTIFICATE-----
+            
+  
+  org2-caa.default:
+
+    url: https://org2-ca.workshop.adityajoshi.online:443
+
+
+    registrar:
+        enrollId: enroll
+        enrollSecret: "enrollpw"
+
+    caName: ca
+    tlsCACerts:
+      pem: 
+       - |
+            -----BEGIN CERTIFICATE-----
+            MIICdjCCAhugAwIBAgIRANmIn1h64Q5T2BKIwPU369gwCgYIKoZIzj0EAwIwUjET
+            MBEGA1UEBhMKQ2FsaWZvcm5pYTEJMAcGA1UEBxMAMQkwBwYDVQQJEwAxFDASBgNV
+            BAoTC0h5cGVybGVkZ2VyMQ8wDQYDVQQLEwZGYWJyaWMwHhcNMjQwNTE0MTg1NDAx
+            WhcNMzQwNTE1MTg1NDAxWjBSMRMwEQYDVQQGEwpDYWxpZm9ybmlhMQkwBwYDVQQH
+            EwAxCTAHBgNVBAkTADEUMBIGA1UEChMLSHlwZXJsZWRnZXIxDzANBgNVBAsTBkZh
+            YnJpYzBZMBMGByqGSM49AgEGCCqGSM49AwEHA0IABAZDBmCIUKVVi7xtFYUM6Ka6
+            g4Xxuh30Q3SaHml9Bs+5PCwHCcqWlrsXhq5qdAm1Oq0fomTYRM8bUkr+b1azmDWj
+            gdEwgc4wDgYDVR0PAQH/BAQDAgGmMB0GA1UdJQQWMBQGCCsGAQUFBwMCBggrBgEF
+            BQcDATAPBgNVHRMBAf8EBTADAQH/MCkGA1UdDgQiBCAX1GBud7/YDkqXMPiLJaMd
+            xwjydrNOaFe1uMRSCVnxSzBhBgNVHREEWjBYgglsb2NhbGhvc3SCCG9yZzItY2Fh
+            ghBvcmcyLWNhYS5kZWZhdWx0giNvcmcyLWNhLndvcmtzaG9wLmFkaXR5YWpvc2hp
+            Lm9ubGluZYcEfwAAAYcEj276cjAKBggqhkjOPQQDAgNJADBGAiEAo+PYyKh7o5go
+            LNnwYlhalK45dntgRNaolos80kQ3y6wCIQDwBCG7iXew07pCFNy4iNYmpXQSokyE
+            INyFSP6EWOrq0A==
+            -----END CERTIFICATE-----
+            
+
+channels:
+  _default:
+    orderers:
+      - ord-node2.default
+      - ord-node3.default
+    peers: {}
+

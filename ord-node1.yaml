@@ -1,0 +1,79 @@
+apiVersion: hlf.kungfusoftware.es/v1alpha1
+kind: FabricOrdererNode
+metadata:
+  creationTimestamp: null
+  name: ord-node1
+  namespace: default
+spec:
+  adminGatewayApi: null
+  adminIstio:
+    hosts:
+    - ord-admin-node1.workshop.adityajoshi.online
+    ingressGateway: ingressgateway
+    port: 443
+  adminTraefik: null
+  affinity: null
+  bootstrapMethod: none
+  channelParticipationEnabled: true
+  env: null
+  gatewayApi: null
+  genesis: ""
+  grpcProxy: null
+  hostAliases: null
+  image: hyperledger/fabric-orderer
+  imagePullSecrets: null
+  istio:
+    hosts:
+    - ord-node1.workshop.adityajoshi.online
+    ingressGateway: ingressgateway
+    port: 443
+  mspID: OrdererMSP
+  podAnnotations: null
+  podLabels: null
+  pullPolicy: IfNotPresent
+  replicas: 1
+  resources: {}
+  secret:
+    enrollment:
+      component:
+        cahost: ord-ca.workshop.adityajoshi.online
+        caname: ca
+        caport: 443
+        catls:
+          cacert: LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUNiakNDQWhXZ0F3SUJBZ0lRWmlEaHNlcHhrVi83cVNaTGxVOFUzakFLQmdncWhrak9QUVFEQWpCU01STXcKRVFZRFZRUUdFd3BEWVd4cFptOXlibWxoTVFrd0J3WURWUVFIRXdBeENUQUhCZ05WQkFrVEFERVVNQklHQTFVRQpDaE1MU0hsd1pYSnNaV1JuWlhJeER6QU5CZ05WQkFzVEJrWmhZbkpwWXpBZUZ3MHlOREExTVRReE9EVXdNelZhCkZ3MHpOREExTVRVeE9EVXdNelZhTUZJeEV6QVJCZ05WQkFZVENrTmhiR2xtYjNKdWFXRXhDVEFIQmdOVkJBY1QKQURFSk1BY0dBMVVFQ1JNQU1SUXdFZ1lEVlFRS0V3dEllWEJsY214bFpHZGxjakVQTUEwR0ExVUVDeE1HUm1GaQpjbWxqTUZrd0V3WUhLb1pJemowQ0FRWUlLb1pJemowREFRY0RRZ0FFQWRiVnNzbldpb3dHdHhSVEJORndaMTM2Ck1IaldzdWx3UE02cHh0VzlQNWY3K25XTUtjNy80dEZLdVljekJXZEZONXk0NU16WWVpcVRDSGpCTS9OTnJhT0IKekRDQnlUQU9CZ05WSFE4QkFmOEVCQU1DQWFZd0hRWURWUjBsQkJZd0ZBWUlLd1lCQlFVSEF3SUdDQ3NHQVFVRgpCd01CTUE4R0ExVWRFd0VCL3dRRk1BTUJBZjh3S1FZRFZSME9CQ0lFSUdkVG9FcXkxS3poK0Z0NStvc3hIV2pPCmo3dmJ1WXh2SGNraGRTbk9vbngyTUZ3R0ExVWRFUVJWTUZPQ0NXeHZZMkZzYUc5emRJSUdiM0prTFdOaGdnNXYKY21RdFkyRXVaR1ZtWVhWc2RJSWliM0prTFdOaExuZHZjbXR6YUc5d0xtRmthWFI1WVdwdmMyaHBMbTl1YkdsdQpaWWNFZndBQUFZY0VqMjc2Y2pBS0JnZ3Foa2pPUFFRREFnTkhBREJFQWlBSlR0UHZhSnA1MGgwSmlQWUFmYWFMCld2V3pxaEk2MU1ZYTVzOU9RZGlualFJZ0ZZTHdlZkZ1V1hmNjY4V0RRQlQ5dVVGVnN2RGxFdkdJVWFycFh1cjQKWlAwPQotLS0tLUVORCBDRVJUSUZJQ0FURS0tLS0tCg==
+          secretRef: null
+        enrollid: orderer
+        enrollsecret: ordererpw
+        external: null
+      tls:
+        cahost: ord-ca.workshop.adityajoshi.online
+        caname: tlsca
+        caport: 443
+        catls:
+          cacert: LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUNiakNDQWhXZ0F3SUJBZ0lRWmlEaHNlcHhrVi83cVNaTGxVOFUzakFLQmdncWhrak9QUVFEQWpCU01STXcKRVFZRFZRUUdFd3BEWVd4cFptOXlibWxoTVFrd0J3WURWUVFIRXdBeENUQUhCZ05WQkFrVEFERVVNQklHQTFVRQpDaE1MU0hsd1pYSnNaV1JuWlhJeER6QU5CZ05WQkFzVEJrWmhZbkpwWXpBZUZ3MHlOREExTVRReE9EVXdNelZhCkZ3MHpOREExTVRVeE9EVXdNelZhTUZJeEV6QVJCZ05WQkFZVENrTmhiR2xtYjNKdWFXRXhDVEFIQmdOVkJBY1QKQURFSk1BY0dBMVVFQ1JNQU1SUXdFZ1lEVlFRS0V3dEllWEJsY214bFpHZGxjakVQTUEwR0ExVUVDeE1HUm1GaQpjbWxqTUZrd0V3WUhLb1pJemowQ0FRWUlLb1pJemowREFRY0RRZ0FFQWRiVnNzbldpb3dHdHhSVEJORndaMTM2Ck1IaldzdWx3UE02cHh0VzlQNWY3K25XTUtjNy80dEZLdVljekJXZEZONXk0NU16WWVpcVRDSGpCTS9OTnJhT0IKekRDQnlUQU9CZ05WSFE4QkFmOEVCQU1DQWFZd0hRWURWUjBsQkJZd0ZBWUlLd1lCQlFVSEF3SUdDQ3NHQVFVRgpCd01CTUE4R0ExVWRFd0VCL3dRRk1BTUJBZjh3S1FZRFZSME9CQ0lFSUdkVG9FcXkxS3poK0Z0NStvc3hIV2pPCmo3dmJ1WXh2SGNraGRTbk9vbngyTUZ3R0ExVWRFUVJWTUZPQ0NXeHZZMkZzYUc5emRJSUdiM0prTFdOaGdnNXYKY21RdFkyRXVaR1ZtWVhWc2RJSWliM0prTFdOaExuZHZjbXR6YUc5d0xtRmthWFI1WVdwdmMyaHBMbTl1YkdsdQpaWWNFZndBQUFZY0VqMjc2Y2pBS0JnZ3Foa2pPUFFRREFnTkhBREJFQWlBSlR0UHZhSnA1MGgwSmlQWUFmYWFMCld2V3pxaEk2MU1ZYTVzOU9RZGlualFJZ0ZZTHdlZkZ1V1hmNjY4V0RRQlQ5dVVGVnN2RGxFdkdJVWFycFh1cjQKWlAwPQotLS0tLUVORCBDRVJUSUZJQ0FURS0tLS0tCg==
+          secretRef: null
+        csr:
+          cn: ""
+          hosts:
+          - 127.0.0.1
+          - localhost
+          - 143.110.250.114
+          - ord-node1
+          - ord-node1.default
+          - ord-node1.workshop.adityajoshi.online
+          - ord-admin-node1.workshop.adityajoshi.online
+        enrollid: orderer
+        enrollsecret: ordererpw
+        external: null
+  service:
+    type: ClusterIP
+  serviceMonitor: null
+  storage:
+    accessMode: ReadWriteOnce
+    size: 2Gi
+    storageClass: do-block-storage
+  tag: 2.4.6
+  tolerations: null
+  traefik: null
+  updateCertificateTime: null
+
